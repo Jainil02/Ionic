@@ -17,7 +17,7 @@ export class LoginPage {
   login() {
     this.authService.login(this.email, this.password).then((res) => {
       // Redirect to home page after login
-      this.router.navigateByUrl('/home');
+      this.router.navigateByUrl('/home2', { state: { email: this.email } });
     }).catch((error) => {
       console.error('Login failed', error);
       // Show error message to the user

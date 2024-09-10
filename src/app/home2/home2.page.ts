@@ -9,9 +9,18 @@ import { HomePage } from '../home/home.page';
 })
 export class Home2Page implements OnInit {
 
-  constructor( private route: Router ) { }
+  public Variable: string;
+   email: string = '';
+
+  constructor( private route: Router ) {
+    this.Variable = 'Jainil'
+   }
 
   ngOnInit() {
+    const navigation = this.route.getCurrentNavigation();
+    if (navigation && navigation.extras && navigation.extras.state) {
+      this.email = navigation.extras.state['email'] as string;
+    }
   }
 
   goHome(){
