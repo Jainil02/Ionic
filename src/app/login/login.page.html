@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form (ngSubmit)="login()">
+    <ion-item>
+      <ion-label>Email</ion-label>
+      <ion-input [(ngModel)]="email" type="email" name="email" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Password</ion-label>
+      <ion-input [(ngModel)]="password" type="password" name="password" required></ion-input>
+    </ion-item>
+
+    <ion-button expand="full" type="submit">Login</ion-button>
+  </form>
+
+  <p>
+    Don't have an account? <a [routerLink]="['/register']">Register here</a>
+  </p>
+</ion-content>
